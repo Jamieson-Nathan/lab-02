@@ -176,36 +176,35 @@ Remove this text, and add your answer for Exercise 5 here.
 ``` r
 # insert code here
 
-ggplot(plastic_waste, 
-       aes(x = coastal_pop / total_pop,
-           y = plastic_waste_per_cap,
-           color = continent)) +
+plastic_waste %>%
+  mutate(coastal_pop_prop = coastal_pop / total_pop) %>%
+  filter(plastic_waste_per_cap < 3) %>%
+  ggplot(aes(
+    x = coastal_pop_prop,
+    y = plastic_waste_per_cap,
+    color = continent
+  )) +
   geom_point() +
-  geom_smooth(aes(group = 1), 
-              method = "loess", 
-              color = "black", 
-              se = TRUE) +
+  geom_smooth(color = "black") +
+  scale_color_viridis_d() +
   labs(
+    x = "Coastal population proportion (Coastal / total population)",
+    y = "Plastic waste per capita ",
+    color = "Continent",
     title = "Plastic waste vs. coastal population proportion",
-    subtitle = "by continent",
-    x = "Coastal population proportion (coastal_pop / total_pop)",
-    y = "Plastic waste per capita"
-  ) +
-  scale_y_continuous(
-    limits = c(0.2, 0.6),
-    breaks = seq(0.2, 0.6, 0.2)
+    subtitle = "by continent"
   ) +
   theme_minimal()
 ```
 
-    ## `geom_smooth()` using formula = 'y ~ x'
+    ## `geom_smooth()` using method = 'loess' and formula = 'y ~ x'
 
-    ## Warning: Removed 181 rows containing non-finite outside the scale range
+    ## Warning: Removed 10 rows containing non-finite outside the scale range
     ## (`stat_smooth()`).
 
-    ## Warning: Removed 181 rows containing missing values or values outside the scale range
+    ## Warning: Removed 10 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
 ![](lab-02_files/figure-gfm/recreate-viz-1.png)<!-- -->
 
-This is the closest I could get it…
+Done!
