@@ -1,7 +1,7 @@
 Lab 02 - Plastic waste
 ================
-Insert your name here
-Insert date here
+Jamieson Nathan
+2/9/25
 
 ## Load packages and data
 
@@ -17,10 +17,14 @@ plastic_waste <- read.csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+Overall, Europe and North America tend to have higher per capita plastic
+waste generation, with greater variability and more significant
+outliers. In contrast, Africa, Asia, and South America generally show
+lower per capita generation with less variability. Oceania appears
+unique with its split distribution, possibly reflecting the diverse
+economic status and consumption patterns within the continent.
 
 ``` r
-# insert code here
 ggplot(
   data = plastic_waste,
   mapping = aes(

@@ -1,7 +1,7 @@
 ---
 title: "Lab 02 - Plastic waste"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Jamieson Nathan"
+date: "2/9/25"
 output: github_document
 ---
 
@@ -19,10 +19,10 @@ plastic_waste <- read.csv("data/plastic-waste.csv")
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
+The density plot reveals that Europe and North America generally exhibit higher and more variable per capita plastic waste compared to other continents, which predominantly show lower and more uniform levels of plastic waste per person. Oceania presents a unique distribution with two distinct peaks, indicating significant variability within the continent regarding plastic waste generation.
 
 ```{r plastic-waste-continent}
-# insert code here
+
 ggplot(
   data = plastic_waste,
   mapping = aes(
@@ -53,7 +53,6 @@ We specify color and fill inside aes() because we want those attributes to vary 
 
 ### Exercise 3
 
-Remove this text, and add your answer for Exercise 3 here.
 
 ```{r plastic-waste-violin}
 # insert code here
@@ -75,7 +74,6 @@ Violin plots show the density of the data across different values, making it eas
 
 ### Exercise 4
 
-Remove this text, and add your answer for Exercise 4 here.
 
 ```{r plastic-waste-mismanaged}
 # insert code here
